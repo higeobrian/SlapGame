@@ -1,0 +1,7 @@
+#plane{
+    background-image: url(plane.jpeg);
+    min-width: 100vh;
+    min-height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}

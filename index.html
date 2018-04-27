@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CatLady</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/main.css">
+    <title>War 'Game'</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/game.css">
 </head>
-<body>
-    <section>
-        <div class="row">
-            <div class="col-3">
-                <div class="card">
-                    <h1>CAT VS MOUSE</h1>
 
-                </div>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <center><h1>Play Game</h1>
+                    <span>Health:<span id="health"></span>
+                </span>
+                <span>Name:<span id="name">Nazi</span>
+            </span>
+            <span>Hits:<span id="hits"></span>
+        </span></center>
+            </h1>
+        </header>
+
+        <div class="row" id="plane">
+            <div class="col-12 d-flex justify-content-center">
             </div>
         </div>
-        </section>
-    <script src="assets/app.js">
+
+        <footer>
+            <div class="row" id="controls">
+
+                <div class="col-6" id="ammo">
+                    <center>
+                        <h1>Ammo</h1>
+                        <button onclick="slap1()" type="button" id="ammobutton1" class="btn btn-primary">bullets</button>
+                        <button onclick="slap2()" type="button" id="ammobutton2" class="btn btn-primary">missle</button>
+                        <button onclick="slap3()" type="button" id="ammobutton3" class="btn btn-primary">laser</button>
+                </div>
+                    </center>
+
+                <div class="col-6" id="repair">
+                    <center>
+                        <h1>Repair</h1>
+                        <button onclick="slap4()" type="button" id="repairbutton1" class="btn btn-secondary">glue</button>
+                        <button onclick="slap5()" type="button" id="repairbutton2" class="btn btn-secondary">nail</button>
+                        <button onclick="slap6()" type="button" id="repairbutton3" class="btn btn-secondary">weld</button>
+                </div>
+            </div>
+                    </center>
+        </footer>
+
+
+    </div>
+    <script src="assets/game.js">
     </script>
 </body>
+
 </html>
