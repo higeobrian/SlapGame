@@ -5,7 +5,7 @@
 
 //players
 
-var nazi = new player2('Nazi')
+var nazi = new Player('Nazi')
 
 function player(nazi){
     this.nazi = nazi
@@ -41,30 +41,52 @@ var ammo = {
     lasers: new laser ("Laser",-10,"This is a laser!"),
 }
 
-Function attack(bullets){
+var defense = function(glue, nail, weld){
+    this.glue = glue;
+    this.nail = nail;
+    this.weld = weld;
+}
+
+var repair = {
+	glue: new Glue ("glue",+1,"This is a glue!"),
+    nail: new Nail ("nail",+3,"This is a nail!"),
+    weld: new Weld ("weld",+5,"This is a weld!"),
+}
+
+
+Function Attack(this.bullets){
     if(bullets == 'bullets'){
-     nazi.health -= attack.bullets
+     nazi.health -= attack.bullets;
      nazi.hits += nazi.glue
     }
     update();
     }
 
-    Function attack(missles){
+    Function Attack(missles){
         if(missles == 'missles'){
-         nazi.health -= attack.missles
+         nazi.health -= attack.missles;
          nazi.hits += nazi.nail
         }
         update();
         }
 
-        Function attack(lasers){
+        Function Attack(lasers){
             if(lasers == 'bullets'){
-             nazi.health -= attack.lasers
+             nazi.health -= attack.lasers;
              nazi.hits += nazi.weld
             }
             update();
             }
 
+            Function defense(this.glue){
+                if(this.glue == 'glue'){
+                 nazi.health -= defense.glue;
+                 nazi.hits += nazi.glue
+                }
+                update();
+                }
+
+                
 /**             
 function attack(bullets){
     nazi.health -= 1;
@@ -109,11 +131,7 @@ function attack(lasers){
 //    this.repair = repair
 //}
 
-var defense = function(glue, nail, weld){
-    this.glue = glue;
-    this.nail = nail;
-    this.weld = weld;
-}
+/**    
 
 function defense(glue){
     nazi.health += 1;
@@ -133,7 +151,8 @@ function attack(weld){
     update();
 }
 
-/**
+//
+
 function defense(glue){
     saudi.health += 1;
     saudi.hits += 1;
