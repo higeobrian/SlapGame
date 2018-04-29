@@ -29,22 +29,16 @@ function player(saudi){
 //}
 
 
-var ammo = {
-	bullets: new bullets ("Bullets",-1,"This is an bullet!"),
-    missles: new missles ("Missle",-5,"This is an missle!"),
-    lasers: new laser ("Laser",-10,"This is an laser!"),
-}
-
 var attack = function(bullets, missles, lasers){
     this.bullets = bullets;
     this.missles = missles;
     this.lasers = lasers;
 }
 
-function attack(bullets){
-    nazi.health -= 1;
-    nazi.hits += 1;
-    update();
+var ammo = {
+	bullets: new bullets ("Bullets",-1,"This is a bullet!"),
+    missles: new missles ("Missle",-5,"This is a missle!"),
+    lasers: new laser ("Laser",-10,"This is a laser!"),
 }
 
 Function attack(bullets){
@@ -52,6 +46,29 @@ Function attack(bullets){
      nazi.health -= attack.bullets
      nazi.hits += nazi.glue
     }
+    update();
+    }
+
+    Function attack(bullets){
+        if(bullets == 'bullets'){
+         nazi.health -= attack.bullets
+         nazi.hits += nazi.glue
+        }
+        update();
+        }
+
+        Function attack(bullets){
+            if(bullets == 'bullets'){
+             nazi.health -= attack.bullets
+             nazi.hits += nazi.glue
+            }
+            update();
+            }
+
+/**             
+function attack(bullets){
+    nazi.health -= 1;
+    nazi.hits += 1;
     update();
     }
 
@@ -67,7 +84,6 @@ function attack(lasers){
     update();
 }
 
-/** 
 function attack(bullets){
     saudi.health -= 1;
     saudi.hits += 1;
