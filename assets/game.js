@@ -7,12 +7,47 @@
 
 var nazi = new Player('Nazi')
 
-function player(nazi){
+function Player(nazi){
     this.nazi = nazi
     this.health = 100
     this.hits = 0
 }
 
+var nazi = {
+    health: 100,
+    hits: 0,
+    defense:[repair.glue, repair.nail, repair.weld]
+}
+
+var Attack = function(bullets, missles, lasers){
+    this.bullets = bullets;
+    this.missles = missles;
+    this.lasers = lasers;
+}
+
+var Defense = function(glue, nail, weld){
+    this.glue = glue;
+    this.nail = nail;
+    this.weld = weld;
+}
+
+var ammo = 
+{
+    bullets: new ammo("Bullets",-1),
+    missles: new ammo("Bullets",-5),
+    lasers: new ammo("Bullets",-10)
+}
+
+var repair = 
+{
+    glue: new repair("Bullets",1),
+    nail: new repair("Bullets",2),
+    weld: new repair("Bullets",3)
+}
+
+function nazi (){
+var ammo = [0]
+}
 /** 
 var saudi = new player1('Saudi')
 
@@ -27,35 +62,19 @@ function player(saudi){
 //function attack(dmg){
 //    this.dmg = dmg
 //}
+ 
+
+Function (attack){
+    if(this.bullets == 'bullets'){
+     nazi.health -= attack.bullets;
+     nazi.hits += nazi.glue
+    }
+    update();
+    }
 
 
-var attack = function(bullets, missles, lasers){
-    this.bullets = bullets;
-    this.missles = missles;
-    this.lasers = lasers;
-}
-
-var ammo = {
-	bullets: new bullets ("Bullets",-1,"This is a bullet!"),
-    missles: new missles ("Missle",-5,"This is a missle!"),
-    lasers: new laser ("Laser",-10,"This is a laser!"),
-}
-
-var defense = function(glue, nail, weld){
-    this.glue = glue;
-    this.nail = nail;
-    this.weld = weld;
-}
-
-var repair = {
-	glue: new Glue ("glue",+1,"This is a glue!"),
-    nail: new Nail ("nail",+3,"This is a nail!"),
-    weld: new Weld ("weld",+5,"This is a weld!"),
-}
-
-
-Function Attack(this.bullets){
-    if(bullets == 'bullets'){
+Function (attack){
+    if(this.bullets == 'bullets'){
      nazi.health -= attack.bullets;
      nazi.hits += nazi.glue
     }
@@ -86,7 +105,21 @@ Function Attack(this.bullets){
                 update();
                 }
 
-                
+
+
+/** var ammo = {
+	bullets: new bullets ("Bullets",-1),
+    missles: new missles ("Missles",-5),
+    lasers: new laser ("Lasers",-10),
+}
+
+var repair = {
+	glue: new Glue ("glue",+1),
+    nail: new Nail ("nail",+3),
+    weld: new Weld ("weld",+5),
+}
+*/
+
 /**             
 function attack(bullets){
     nazi.health -= 1;
@@ -236,12 +269,6 @@ function update() {
 //     this.weld = weld;
 // }
 
-
-update();
-
-var items = {
-	shield:new Item("Shield",0.3,"This is an awesome shield!"),
-}
 
 /**modifiers
  * var me = {
