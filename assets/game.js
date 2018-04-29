@@ -28,6 +28,13 @@ function player(saudi){
 //    this.dmg = dmg
 //}
 
+
+var ammo = {
+	bullets: new bullets ("Bullets",-1,"This is an bullet!"),
+    missles: new missles ("Missle",-5,"This is an missle!"),
+    lasers: new laser ("Laser",-10,"This is an laser!"),
+}
+
 var attack = function(bullets, missles, lasers){
     this.bullets = bullets;
     this.missles = missles;
@@ -40,11 +47,12 @@ function attack(bullets){
     update();
 }
 
-Function attack (bullets){
+Function attack(bullets){
     if(bullets == 'bullets'){
-     Nazi.health -= attack.bullets
-     Nazi.hits += defense.glue
+     nazi.health -= attack.bullets
+     nazi.hits += nazi.glue
     }
+    update();
     }
 
 function attack(missles){
