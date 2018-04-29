@@ -49,18 +49,18 @@ Function attack(bullets){
     update();
     }
 
-    Function attack(bullets){
-        if(bullets == 'bullets'){
-         nazi.health -= attack.bullets
-         nazi.hits += nazi.glue
+    Function attack(missles){
+        if(missles == 'missles'){
+         nazi.health -= attack.missles
+         nazi.hits += nazi.nail
         }
         update();
         }
 
-        Function attack(bullets){
-            if(bullets == 'bullets'){
-             nazi.health -= attack.bullets
-             nazi.hits += nazi.glue
+        Function attack(lasers){
+            if(lasers == 'bullets'){
+             nazi.health -= attack.lasers
+             nazi.hits += nazi.weld
             }
             update();
             }
