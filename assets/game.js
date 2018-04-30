@@ -3,10 +3,27 @@
 // var health = 100
 // var hits = 0
 
-//players
+//Function: adding characters
 
-var nazi = new Enemy('Nazi')
+function Enemy(name, health) {
+    this.name = name;
+    this.health = health;
+    this.attacks = {
+        bullets: 1,
+        missles: 5,
+        lasers: 10
+    }
+    this.items = []
+    this.hits = 0
+ }
 
+ //Enemy creator
+
+var Enemies = {
+    Nazi: new Enemy('Nazi', 100)
+}
+
+/** 
 var nazi = {
     health: new Health(100),
     hits: new Hits(0),
@@ -19,6 +36,7 @@ function Enemy(nazi){
     this.health = 100
     this.hits = 0
 }
+*/
 
 //constructor function attack 
 var Attack = function(bullets, missles, lasers)
@@ -45,9 +63,9 @@ var Defense = function(glue, nail, weld)
 
 //object literal 
 var repair = {
-    glue: new Defense("Bullets",1),
-    nail: new Defense("Bullets",2),
-    weld: new Defense("Bullets",3)
+    glue: new Shield("Bullets",1),
+    nail: new Shield("Bullets",2),
+    weld: new Shield("Bullets",3)
 }
 
 function nazi (){
