@@ -2,21 +2,21 @@
 
 //vars 
 
-//creating new character with set parameters 
+//creating new character with set parameters from below syntax.
 var target = {
     nazi: new Target('Nazi', 100)
 }
-
+//constructor function. Creates new objects.
 function Target(name, health) 
 {
     this.name = name;
     this.health = health;
     this.items = [];
     this.hits = 0;
-    this.
  }
 
-//creating new items with set parameters
+//creating new items with set parameters, after creating a construction function of item objects.
+//used example from instruction, readme2, structure.
 
 function Item(name, modifier, description) {
     this.name = name;
@@ -30,7 +30,7 @@ var items = {
     weld: new Item("weld", -3, "add 3 health"),
 }
 
-//MODIFIERS - damage reduction + pushes items () to nazi.
+//MODIFIERS - damage reduction. pushes items () created above to nazi target. the parameter houses the item.
 
 function giveGlue() {
     target.nazi.items.push(items.glue);
@@ -48,7 +48,9 @@ function giveWeld() {
 }
 
 
-//DAMAGE IMPACT
+//DAMAGE IMPACT - Nazi health is effected from "attack" buttons, reduced from 100.
+// * addMods(); refers to forloop function - instructed w/in readme doc. 
+//update function runs when button is selected, to update front end.
 
 /** 
 var ammo = {
@@ -77,13 +79,19 @@ function lasers() {
     update()
 }
 
-//Create a function that will be called, addMods().
+//Create a function that will be called, addMods(), including forloop with 
 //for loop, item array, modify impact.
+//Using a "for loop", calculate the combined value of modifiers in the target.items array.
+//create a total variable 
+//if 0 is great than what the nazi uses, add 1.
+//var item = target.nazi.items[i]; array. 
+//total = 0, add to ---- confused with last part. item references the above, but .modifier references the item? So target.nazi.items[i]... choose glue, which is +1..total (0) +1 to modifier glue. returns +1 to health? 
+
 function addMods(){
 var total = 0; 
 for (var i = 0; i < target.nazi.items.length; i++) {  
     var item = target.nazi.items[i]; 
-    total += item.itemMod; 
+    total += item.modifier; 
 } 
 return total;
 }
