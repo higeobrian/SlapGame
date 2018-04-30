@@ -1,27 +1,48 @@
-
-// var name = 'Nazi'
-// var health = 100
-// var hits = 0
-
 //Function: adding characters
 
-function Enemy(name, health) {
+function Target(name, health, bullets, missles, lasers) {
     this.name = name;
     this.health = health;
     this.attacks = {
-        bullets: 1,
-        missles: 5,
-        lasers: 10
-    }
+        'bullets': bullets,
+        'missles': missles,
+        'lasers': lasers
+    };
     this.items = []
     this.hits = 0
- }
+ };
 
  //Enemy creator
 
 var Enemies = {
     Nazi: new Enemy('Nazi', 100)
 }
+
+var Enemies = {
+    Saudi: new Enemy('Saudi', 100)
+}
+
+var nazi= {
+    health: 120,
+    attacks: {
+      kick: 20,
+      punch: 15,
+      uppercut: 30,
+      hadouken: 40
+    },
+    mobility: 35
+  }
+  
+  var saudi = {
+    health: 100,
+    attacks: {
+      kick: 15,
+      punch: 10,
+      uppercut: 25,
+      hadouken: 60
+    }
+    mobility: 55
+  }
 
 /** 
 var nazi = {
@@ -39,6 +60,7 @@ function Enemy(nazi){
 */
 
 //constructor function attack 
+
 var Attack = function(bullets, missles, lasers)
 {
     this.bullets = bullets;
@@ -47,6 +69,7 @@ var Attack = function(bullets, missles, lasers)
 }
 
 //object literal 
+
 var ammo = {
     bullets: new Weapon("Bullets",-1),
     missles: new Weapon("Bullets",-5),
@@ -54,6 +77,7 @@ var ammo = {
 }
 
 //constructor function attack 
+
 var Defense = function(glue, nail, weld)
 {
     this.glue = glue;
@@ -62,18 +86,21 @@ var Defense = function(glue, nail, weld)
 }
 
 //object literal 
+
 var repair = {
     glue: new Shield("Bullets",1),
     nail: new Shield("Bullets",2),
     weld: new Shield("Bullets",3)
 }
 
+//????????? 
+
 function nazi (){
 var ammo = [0]
 }
 
 //step 6: reduce damage -- add the function word addMods in each damage reduction function
-//
+
 function addMods() {
     var modTotal = 0
     for (let i = 0; i < nazi.attack.length; i++) {
@@ -101,29 +128,18 @@ function weld() {
     update()
 }
 
-//update on front end --- use update in each function.
     function update() {
         document.getElementById('health').innerText=`${nazi.health}`
         document.getElementById('hits').innerText=`${nazi.hits}`
         document.getElementById('name').innerText=`${Enemy.name}`
     }
 
-/** 
-var saudi = new player1('Saudi')
-
-function player(saudi){
-    this.saudi = saudi
-    this.health = 100
-    this.hits = 0
-}
-*/
 
 //attack
 //function attack(dmg){
 //    this.dmg = dmg
 //}
  
-
 Function (attack){
     if(this.bullets == 'bullets'){
      nazi.health -= attack.bullets;
@@ -132,42 +148,9 @@ Function (attack){
     update();
     }
 
+    update()
 
-Function (attack){
-    if(this.bullets == 'bullets'){
-     nazi.health -= attack.bullets;
-     nazi.hits += nazi.glue
-    }
-    update();
-    }
-
-    Function Attack(missles){
-        if(missles == 'missles'){
-         nazi.health -= attack.missles;
-         nazi.hits += nazi.nail
-        }
-        update();
-        }
-
-        Function Attack(lasers){
-            if(lasers == 'bullets'){
-             nazi.health -= attack.lasers;
-             nazi.hits += nazi.weld
-            }
-            update();
-            }
-
-            Function defense(this.glue){
-                if(this.glue == 'glue'){
-                 nazi.health -= defense.glue;
-                 nazi.hits += nazi.glue
-                }
-                update();
-                }
-
-                update()
-
-
+                
 
 /** var ammo = {
 	bullets: new bullets ("Bullets",-1),
@@ -246,27 +229,6 @@ function attack(weld){
     update();
 }
 
-//
-
-function defense(glue){
-    saudi.health += 1;
-    saudi.hits += 1;
-    update();
-}
-
-function defense(nail){
-    saudi.health += 1;
-    saudi.hits += 1;
-    update();
-}
-
-function defense(weld){
-    saudi.health += 1;
-    saudi.hits += 1;
-    update();
-}
-*/
-
 /**
 var bullet = new attack(-1)
 var missle = new attack(-5)
@@ -277,41 +239,52 @@ var repair = {
     nail: new repair(2)
     weld: new repair(3)
 }
+
+var repair = function(glue, nail, weld){
+     this.glue = glue;
+     this.nail = nail;
+     this.weld = weld;
+}
 */
 
 
-/**  
-function slap1(){
+
+var name = 'Nazi'
+var health = 100
+var hits = 0
+
+ 
+function attack(bullets){
     nazi.health -= 1;
     nazi.hits += 1;
     update();
 }
 
-function slap2(){
+function attack(missles){
     health -= 5;
     hits += 1;
     update();
 }
 
-function slap3(){
+function attack(lasers){
     health -= 10;
     hits += 1;
     update();
 }
 
-function slap4(){
+function repair(glue){
     health += 1;
     hits += 1;
     update();
 }
 
-function slap5(){
+function repair(nail){
     health += 3;
     hits += 1;
     update();
 }
 
-function slap6(){
+function repair(weld){
     health += 5;
     hits += 1;
     update();
@@ -323,13 +296,30 @@ function update() {
     document.getElementById('hits').innerText=`${hits}`;
     document.getElementById('name').innerText=`${name}`;
 }
-*/
 
-// var repair = function(glue, nail, weld){
-//     this.glue = glue;
-//     this.nail = nail;
-//     this.weld = weld;
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CLASS NOTES
 
 
 /**modifiers
@@ -398,9 +388,32 @@ hits or repair...
 
 
 
-//readme3
-//Encapsulation
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//READ ME PART-3
+
+//Encapsulation
 /** 
 function GameService(){
 
@@ -438,5 +451,51 @@ function GameService(){
 function GameController(){
     var dataStore = new GameService()
     }
+*/
 
-    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** 
+ * Saudi Character
+
+function defense(glue){
+    saudi.health += 1;
+    saudi.hits += 1;
+    update();
+}
+
+function defense(nail){
+    saudi.health += 1;
+    saudi.hits += 1;
+    update();
+}
+
+function defense(weld){
+    saudi.health += 1;
+    saudi.hits += 1;
+    update();
+}
+
+
+var saudi = new player1('Saudi')
+
+function player(saudi){
+    this.saudi = saudi
+    this.health = 100
+    this.hits = 0
+}
+
+*/
+
+

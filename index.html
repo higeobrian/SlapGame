@@ -33,21 +33,30 @@
         <footer>
             <div class="row mb-20" id="controls">
 
-                <div class="col-6" id="ammo">
+                <div class="col-4" id="attack">
                     <center>
                         <h1>Attack</h1>
                         <button onclick="attack(bullets)" type="button" id="bullets" class="btn btn-primary">bullets</button>
-                        <button onclick="attack()" type="button" id="missles" class="btn btn-primary">missles</button>
-                        <button onclick="attack()" type="button" id="lasers" class="btn btn-primary">lasers</button>
+                        <button onclick="attack(missles)" type="button" id="missles" class="btn btn-primary">missles</button>
+                        <button onclick="attack(lasers)" type="button" id="lasers" class="btn btn-primary">lasers</button>
                 </div>
                     </center>
 
-                <div class="col-6" id="repair">
+                    <div class="col-4" id="items">
+                            <center>
+                                <h1>My Modifiers</h1>
+                                <button onclick="defense(shield1)" type="button" id="bullets" class="btn btn-warning">sheild1</button>
+                                <button onclick="defense(shield2)" type="button" id="missles" class="btn btn-warning">shield2</button>
+                                <button onclick="defense(shield3)" type="button" id="lasers" class="btn btn-warning">shield3</button>
+                        </div>
+                            </center>    
+
+                <div class="col-4" id="repair">
                     <center>
                         <h1>Repair</h1>
-                        <button onclick="slap4()" type="button" id="repairbutton1" class="btn btn-secondary">glue</button>
-                        <button onclick="slap5()" type="button" id="repairbutton2" class="btn btn-secondary">nail</button>
-                        <button onclick="slap6()" type="button" id="repairbutton3" class="btn btn-secondary">weld</button>
+                        <button onclick="repair(glue)" type="button" id="glue" class="btn btn-secondary">glue</button>
+                        <button onclick="repair(nail)" type="button" id="nail" class="btn btn-secondary">nail</button>
+                        <button onclick="repair(weld)" type="button" id="weld" class="btn btn-secondary">weld</button>
                 </div>
             </div>
                     </center>
