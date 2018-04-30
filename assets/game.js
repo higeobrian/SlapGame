@@ -24,11 +24,11 @@ function Item(name, modifier, description) {
     this.description = description;
 }
 
-var items = {
+var items = [{
     glue: new Item("glue", -1, "add 1 health"),
     nail: new Item("nail", -2, "add 2 health"),
     weld: new Item("weld", -3, "add 3 health"),
-}
+}]
 
 //MODIFIERS - damage reduction. pushes items () created above to nazi target. the parameter houses the item.
 
