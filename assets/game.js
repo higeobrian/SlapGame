@@ -62,19 +62,19 @@ var ammo = {
 */
 
 function bullets() {
-    target.nazi.health -= 1 (addMods();
+    target.nazi.health -= 1 + (addMods();
     target.nazi.hits += 1;
     update()
 }
 
 function missles() {
-    target.nazi.health -= 3 (addMods();
+    target.nazi.health -= 3 + (addMods();
     target.nazi.hits += 1;
     update()
 }
 
 function lasers() {
-    target.nazi.health -= 5 (addMods();
+    target.nazi.health -= 5 + (addMods();
     target.nazi.hits += 1;
     update()
 }
@@ -108,7 +108,7 @@ function update() {
     document.getElementById('health').innerText=`${target.nazi.health}`
     document.getElementById('hits').innerText=`${target.nazi.hits}`
     document.getElementById('name').innerText=`${target.nazi.name}`
-}
+};
 
 update()
 
@@ -140,10 +140,7 @@ var defense = {
 
 
 
-//attack
-//function attack(dmg){
-//    this.dmg = dmg
-//}
+/** 
  
 Function (attack){
     if(this.bullets == 'bullets'){
@@ -191,6 +188,7 @@ Function (attack){
         update();
     } 
        
+    */
 
 /**
 
@@ -249,29 +247,7 @@ var repair = function(glue, nail, weld){
 
 
 // CLASS NOTES
-
-
-/**modifiers
- * 
- * var me = {
- * modifiers: [{name: 'modify1}]
- * }
-
- *  
- * var modifiers = {
- * modif1: {name: 'modifier1},
- * modif2: {...},
- * modif3: {...},
- * }
- * 
- * //done
-
-
-/**function
-
-var slap(){
-    me.health-=5 + addMods()
-}
+/** 
 
 function addMods(){
     var total = ''
