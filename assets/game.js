@@ -1,71 +1,36 @@
 //Function: adding characters
 
-function Target(name, health, bullets, missles, lasers) {
+function Target(name, health, bullets, missles, lasers) 
+{
     this.name = name;
     this.health = health;
     this.attacks = {
         'bullets': bullets,
         'missles': missles,
         'lasers': lasers
-    };
+    }
     this.items = []
     this.hits = 0
  };
 
- //Enemy creator
-
-var Enemies = {
-    Nazi: new Enemy('Nazi', 100)
+var target = {
+    Nazi: new Target('Nazi', 100, 5, 6, 7)
 }
-
-var Enemies = {
-    Saudi: new Enemy('Saudi', 100)
-}
-
-var nazi= {
-    health: 120,
-    attacks: {
-      kick: 20,
-      punch: 15,
-      uppercut: 30,
-      hadouken: 40
-    },
-    mobility: 35
-  }
-  
-  var saudi = {
-    health: 100,
-    attacks: {
-      kick: 15,
-      punch: 10,
-      uppercut: 25,
-      hadouken: 60
-    }
-    mobility: 55
-  }
-
-/** 
-var nazi = {
-    health: new Health(100),
-    hits: new Hits(0),
-    Defense: new Defense ([repair.glue, repair.nail, repair.weld]),
-    Attack: new Attack ([repair.glue, repair.nail, repair.weld])
-}
-
-function Enemy(nazi){
-    this.nazi = nazi
-    this.health = 100
-    this.hits = 0
-}
-*/
 
 //constructor function attack 
 
-var Attack = function(bullets, missles, lasers)
+var attack = function(bullets, missles, lasers)
 {
     this.bullets = bullets;
     this.missles = missles;
     this.lasers = lasers;
+}
+
+var modifier = function(glue, nail, weld)
+{
+    this.glue = glue;
+    this.nail = nail;
+    this.weld = weld;
 }
 
 //object literal 
@@ -76,53 +41,54 @@ var ammo = {
     lasers: new Weapon("Bullets",-10)
 }
 
-//constructor function attack 
-
-var Defense = function(glue, nail, weld)
-{
-    this.glue = glue;
-    this.nail = nail;
-    this.weld = weld;
+var modifier = {
+    glue: new Defense("glue",1),
+    nail: new Defense("nail",2),
+    weld: new Defense("weld",3)
 }
 
-//object literal 
+//function modifier... still need to construct this.
 
-var repair = {
-    glue: new Shield("Bullets",1),
-    nail: new Shield("Bullets",2),
-    weld: new Shield("Bullets",3)
+function modifier(name, health, glue, nail, weld) {
+    this.shield1 = shield1;
+    this.shield2 = shield2;
+    this.shield3 = shield3;
+};
+
+var shield = {
+modifiers: [{name: shield1, name: shield2, name: shield3}]
 }
 
-//????????? 
-
-function nazi (){
-var ammo = [0]
+var modifiers = {
+modif1: new Shield (),
+modif2: new Shield (),
+modif3: new Shield 
 }
 
 //step 6: reduce damage -- add the function word addMods in each damage reduction function
 
 function addMods() {
     var modTotal = 0
-    for (let i = 0; i < nazi.attack.length; i++) {
-        let mod = nazi.attack[i];
+    for (let i = 0; i < nazi.modifier.length; i++) {
+        let mod = nazi.modifier[i];
         modTotal += mod.modifier
     }
     return modTotal
 }
 
-function glue() {
+function modify1() {
     nazi.health -= (addMods() + 1)
     nazi.hits -= 1
     update()
 }
 
-function nail() {
+function modify2() {
     nazi.health -= (addMods() + 2)
     nazi.hits -= 1
     update()
 }
 
-function weld() {
+function modify3() {
     nazi.health -= (addMods() + 3)
     nazi.hits -= 1
     update()
@@ -149,8 +115,7 @@ Function (attack){
     }
 
     update()
-
-                
+       
 
 /** var ammo = {
 	bullets: new bullets ("Bullets",-1),
@@ -162,44 +127,6 @@ var repair = {
 	glue: new Glue ("glue",+1),
     nail: new Nail ("nail",+3),
     weld: new Weld ("weld",+5),
-}
-*/
-
-/**             
-function attack(bullets){
-    nazi.health -= 1;
-    nazi.hits += 1;
-    update();
-    }
-
-function attack(missles){
-    nazi.health -= 5;
-    nazi.hits += 5;
-    update();
-}
-
-function attack(lasers){
-    nazi.health -= 10;
-    nazi.hits += 10;
-    update();
-}
-
-function attack(bullets){
-    saudi.health -= 1;
-    saudi.hits += 1;
-    update();
-}
-
-function attack(missles){
-    saudi.health -= 5;
-    saudi.hits += 5;
-    update();
-}
-
-function attack(lasers){
-    saudi.health -= 10;
-    saudi.hits += 10;
-    update();
 }
 */
 
@@ -299,41 +226,42 @@ function update() {
 
 
 
+function attack(bullets){
+    nazi.health -= 1;
+    nazi.hits += 1;
+    update();
+    }
 
+function attack(missles){
+    nazi.health -= 5;
+    nazi.hits += 5;
+    update();
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function attack(lasers){
+    nazi.health -= 10;
+    nazi.hits += 10;
+    update();
+}
 
 
 // CLASS NOTES
 
 
 /**modifiers
+ * 
  * var me = {
  * modifiers: [{name: 'modify1}]
  * }
- * 
+
+ *  
  * var modifiers = {
  * modif1: {name: 'modifier1},
  * modif2: {...},
  * modif3: {...},
  * }
-
-
+ * 
+ * //done
 
 // <p>my modifies: <span id='modifiers'>...</span> </p>
 //<button></button>
@@ -341,21 +269,7 @@ function update() {
 //<button></button>
 
 
-/**function modify1(){
-    me.modifiers.push(modifiers.mod1) <-- calls it and pushes it
-    draw()
-}
-
-function modify2()
-    me.modifiers.push(modifiers.mod1)
-    draw()
-{
-    
-}
-function modify3(){
-    me.modifiers.push(modifiers.mod1)
-    draw()
-}
+/**function
 
 var slap(){
     me.health-=5 + addMods()
@@ -365,8 +279,10 @@ function addMods(){
     var total = ''
    for(let i = 0; i < me.modifiers; i++) {
     const element = me.modifiers[i];
+    
     //looks at each mod in the 'me' objects modifiers array
     let mod = me.modifiers[i]
+    
     //add to total
     total+= mod.name + ' ' 
 }
@@ -379,10 +295,8 @@ function addMods(){
  var results = addMods()
  document.getelementbyid('modifiers').innertext = ''
 
-
 in html 
 onclick='globals.modify1()'
-
 hits or repair...
 */
 
@@ -419,25 +333,6 @@ function GameService(){
 
     var dataStore = this
     var target = new Target("Scarecrow", 100, 1, 5, 10);
-    
-    function Target(name, health, slap, punch, kick) {
-            this.name = name;
-            this.health = health;
-            this.attacks = {
-                "slap": slap,
-                "punch": punch,
-                "kick": kick
-            };
-            this.items = []
-            this.hits = 0
-        };
-        
-    function Item(name, modifier, description) {
-            this.name = name;
-            this.modifier = modifier;
-            this.description = description;
-        };
-    
 
         //step 2: getters and setters 
 
@@ -458,15 +353,47 @@ function GameController(){
 
 
 
+/** DONE - notes section
 
+function Target(name, health, slap, punch, kick) {
+    this.name = name;
+    this.health = health;
+    this.attacks = {
+        "slap": slap,
+        "punch": punch,
+        "kick": kick
+    };
+    this.items = []
+    this.hits = 0
+};
 
-
-
-
+*/
 
 
 
 /** 
+var nazi = {
+    health: new Health(100),
+    hits: new Hits(0),
+    Defense: new Defense ([repair.glue, repair.nail, repair.weld]),
+    Attack: new Attack ([repair.glue, repair.nail, repair.weld])
+}
+
+function Enemy(nazi){
+    this.nazi = nazi
+    this.health = 100
+    this.hits = 0
+}
+*/
+
+/** 
+var saudi = new player1('Saudi')
+
+function player(saudi){
+    this.saudi = saudi
+    this.health = 100
+    this.hits = 0
+}
  * Saudi Character
 
 function defense(glue){
@@ -487,15 +414,23 @@ function defense(weld){
     update();
 }
 
-
-var saudi = new player1('Saudi')
-
-function player(saudi){
-    this.saudi = saudi
-    this.health = 100
-    this.hits = 0
+function attack(bullets){
+    saudi.health -= 1;
+    saudi.hits += 1;
+    update();
 }
 
+function attack(missles){
+    saudi.health -= 5;
+    saudi.hits += 5;
+    update();
+}
+
+function attack(lasers){
+    saudi.health -= 10;
+    saudi.hits += 10;
+    update();
+}
 */
 
 
