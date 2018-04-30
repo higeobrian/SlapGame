@@ -50,13 +50,12 @@ function giveWeld() {
 
 //DAMAGE IMPACT
 
-/** 
+
 var ammo = {
     bullets: new Weapon("Bullets",-1),
     missles: new Weapon("missles",-5),
     lasers: new Weapon("lasers",-10)
 }
-*/
 
 function bullets() {
     target.nazi.health -= 1 * addMods();
@@ -97,6 +96,29 @@ function update() {
 
 update()
 
+
+/** 
+ * FIX ERRORS:
+ * 
+ * game.js:17 Uncaught SyntaxError: Unexpected token }
+(index):39 Uncaught TypeError: bullets is not a function
+    at HTMLButtonElement.onclick ((index):39)
+onclick @ (index):39
+(index):40 Uncaught TypeError: missles is not a function
+    at HTMLButtonElement.onclick ((index):40)
+onclick @ (index):40
+(index):41 Uncaught TypeError: lasers is not a function
+    at HTMLButtonElement.onclick ((index):41)
+onclick @ (index):41
+(index):48 Uncaught ReferenceError: glue is not defined
+    at HTMLButtonElement.onclick ((index):48)
+onclick @ (index):48
+(index):49 Uncaught TypeError: nail is not a function
+    at HTMLButtonElement.onclick ((index):49)
+onclick @ (index):49
+(index):50 Uncaught TypeError: weld is not a function
+    at HTMLButtonElement.onclick ((index):50)
+ */
 
 //function damage 
 /** 
