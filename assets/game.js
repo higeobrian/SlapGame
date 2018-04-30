@@ -49,11 +49,6 @@ var modifier = {
 
 //function modifier... still need to construct this.
 
-function modifier(name, health, glue, nail, weld) {
-    this.shield1 = shield1;
-    this.shield2 = shield2;
-    this.shield3 = shield3;
-};
 
 var shield = {
 modifiers: [{name: shield1, name: shield2, name: shield3}]
