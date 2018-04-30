@@ -58,6 +58,7 @@ var ammo = {
 }
 */
 
+//is this supposed to be an array?? <======== 
 function bullets() {
     target.nazi.health -= 1 * addMods();
     target.nazi.hits += 1;
@@ -97,9 +98,8 @@ function update() {
 
 update()
 
-
 /** 
- * FIX ERRORS:
+ * FIX ERRORS: ... do i need to add globals.XXXX()????
  * 
  * game.js:17 Uncaught SyntaxError: Unexpected token }
 (index):39 Uncaught TypeError: bullets is not a function
@@ -121,6 +121,10 @@ onclick @ (index):49
     at HTMLButtonElement.onclick ((index):50)
  */
 
+
+
+
+
 //function damage 
 /** 
 var attack = function(bullets, missles, lasers)
@@ -129,9 +133,6 @@ var attack = function(bullets, missles, lasers)
     this.missles = missles;
     this.lasers = lasers;
 }
-
-*/
-
 
 var modifier = function(name, modifier, description)
 {
@@ -145,8 +146,6 @@ var defense = {
     modify2: new Defense("nail",2),
     modify3: new Defense("weld",3)
 }
-
-/** 
  
 Function (attack){
     if(this.bullets == 'bullets'){
@@ -174,8 +173,6 @@ Function (attack){
         update();
     }
     
-
-    
     function attack(bullets){
         nazi.health -= 1;
         nazi.hits += 1;
@@ -193,25 +190,14 @@ Function (attack){
         nazi.hits += 10;
         update();
     } 
-       
-    */
-
-/**
 
 var repair = {
 	glue: new Glue ("glue",+1),
     nail: new Nail ("nail",+3),
     weld: new Weld ("weld",+5),
 }
-*/
 
-//defense
-
-//function defense(repair){
-//    this.repair = repair
-//}
-
-/**    
+//defense 
 
 function defense(glue){
     nazi.health += 1;
@@ -231,7 +217,6 @@ function attack(weld){
     update();
 }
 
-/**
 var bullet = new attack(-1)
 var missle = new attack(-5)
 var laser = new attack (-10)
@@ -247,10 +232,8 @@ var repair = function(glue, nail, weld){
      this.nail = nail;
      this.weld = weld;
 }
-*/
 
 // CLASS NOTES
-/** 
 
 function addMods(){
     var total = ''
@@ -270,14 +253,8 @@ function addMods(){
  //you then need to draw using below function
  function draw()
  var results = addMods()
- document.getelementbyid('modifiers').innertext = ''
 
-in html 
-onclick='globals.modify1()'
-hits or repair...
 */
-
-
 
 
 
