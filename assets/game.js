@@ -5,49 +5,91 @@
 
 //players
 
-var nazi = new Player('Nazi')
+var nazi = new Enemy('Nazi')
 
-function Player(nazi){
+var nazi = {
+    health: new Health(100),
+    hits: new Hits(0),
+    Defense: new Defense ([repair.glue, repair.nail, repair.weld]),
+    Attack: new Attack ([repair.glue, repair.nail, repair.weld])
+}
+
+function Enemy(nazi){
     this.nazi = nazi
     this.health = 100
     this.hits = 0
 }
 
-var nazi = {
-    health: 100,
-    hits: 0,
-    defense:[repair.glue, repair.nail, repair.weld]
-}
-
-var Attack = function(bullets, missles, lasers){
+//constructor function attack 
+var Attack = function(bullets, missles, lasers)
+{
     this.bullets = bullets;
     this.missles = missles;
     this.lasers = lasers;
 }
 
-var Defense = function(glue, nail, weld){
+//object literal 
+var ammo = {
+    bullets: new Weapon("Bullets",-1),
+    missles: new Weapon("Bullets",-5),
+    lasers: new Weapon("Bullets",-10)
+}
+
+//constructor function attack 
+var Defense = function(glue, nail, weld)
+{
     this.glue = glue;
     this.nail = nail;
     this.weld = weld;
 }
 
-var ammo = 
-{
-    bullets: new ammo("Bullets",-1),
-    missles: new ammo("Bullets",-5),
-    lasers: new ammo("Bullets",-10)
-}
-
-var repair = 
-{
-    glue: new repair("Bullets",1),
-    nail: new repair("Bullets",2),
-    weld: new repair("Bullets",3)
+//object literal 
+var repair = {
+    glue: new Defense("Bullets",1),
+    nail: new Defense("Bullets",2),
+    weld: new Defense("Bullets",3)
 }
 
 function nazi (){
 var ammo = [0]
 }
+
+//step 6: reduce damage -- add the function word addMods in each damage reduction function
+//
+function addMods() {
+    var modTotal = 0
+    for (let i = 0; i < nazi.attack.length; i++) {
+        let mod = nazi.attack[i];
+        modTotal += mod.modifier
+    }
+    return modTotal
+}
+
+function glue() {
+    nazi.health -= (addMods() + 1)
+    nazi.hits -= 1
+    update()
+}
+
+function nail() {
+    nazi.health -= (addMods() + 2)
+    nazi.hits -= 1
+    update()
+}
+
+function weld() {
+    nazi.health -= (addMods() + 3)
+    nazi.hits -= 1
+    update()
+}
+
+//update on front end --- use update in each function.
+    function update() {
+        document.getElementById('health').innerText=`${nazi.health}`
+        document.getElementById('hits').innerText=`${nazi.hits}`
+        document.getElementById('name').innerText=`${Enemy.name}`
+    }
+
 /** 
 var saudi = new player1('Saudi')
 
@@ -104,6 +146,8 @@ Function (attack){
                 }
                 update();
                 }
+
+                update()
 
 
 
@@ -334,3 +378,47 @@ onclick='globals.modify1()'
 hits or repair...
 */
 
+
+
+//readme3
+//Encapsulation
+
+/** 
+function GameService(){
+
+    var dataStore = this
+    var target = new Target("Scarecrow", 100, 1, 5, 10);
+    
+    function Target(name, health, slap, punch, kick) {
+            this.name = name;
+            this.health = health;
+            this.attacks = {
+                "slap": slap,
+                "punch": punch,
+                "kick": kick
+            };
+            this.items = []
+            this.hits = 0
+        };
+        
+    function Item(name, modifier, description) {
+            this.name = name;
+            this.modifier = modifier;
+            this.description = description;
+        };
+    
+
+        //step 2: getters and setters 
+
+        dataStore.attack = function(type) {
+            target.health -= target.attacks[type] * this.addMods()
+            target.hits += 1
+        }
+
+
+        //step 3: Controller
+function GameController(){
+    var dataStore = new GameService()
+    }
+
+    */
