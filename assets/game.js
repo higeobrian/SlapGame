@@ -50,12 +50,13 @@ function giveWeld() {
 
 //DAMAGE IMPACT
 
-
+/** 
 var ammo = {
     bullets: new Weapon("Bullets",-1),
     missles: new Weapon("missles",-5),
     lasers: new Weapon("lasers",-10)
 }
+*/
 
 function bullets() {
     target.nazi.health -= 1 * addMods();
