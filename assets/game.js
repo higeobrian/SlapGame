@@ -17,23 +17,20 @@ function Target(name, health)
  }
 
 //creating new items with set parameters
-var items = {
-    glue: new Item(glue, -1, "add 1 health"),
-    nail: new Item(nail, -2, "add 2 health"),
-    weld: new Item(weld, -3, "add 3 health"),
-}
 
 function Item(name, modifier, description) {
     this.name = name;
     this.modifier = modifier;
     this.description = description;
 }
-//remember to capitalize the constructor name
-//item constructor and function to push new items to character
 
-//readme2, step 4, #3
+var items = {
+    glue: new Item("glue", -1, "add 1 health"),
+    nail: new Item("nail", -2, "add 2 health"),
+    weld: new Item("weld", -3, "add 3 health"),
+}
 
-//MODIFIERS - reduce damage impact
+//MODIFIERS - damage reduction + pushes items () to nazi.
 
 function giveGlue() {
     target.nazi.items.push(items.glue);
@@ -62,34 +59,22 @@ var ammo = {
 */
 
 function bullets() {
-    target.nazi.health -= 1 + (addMods();
+    target.nazi.health -= 1 * addMods();
     target.nazi.hits += 1;
     update()
 }
 
 function missles() {
-    target.nazi.health -= 3 + (addMods();
+    target.nazi.health -= 3 * addMods();
     target.nazi.hits += 1;
     update()
 }
 
 function lasers() {
-    target.nazi.health -= 5 + (addMods();
+    target.nazi.health -= 5 * addMods();
     target.nazi.hits += 1;
     update()
 }
-
-/**
-function glue(){
-    giveNazi(items.glue)
-}
-function nail(){
-    giveNazi(items.nail)
-}
-function weld(){
-    giveNazi(items.weld)
-}
- */
 
 //Create a function that will be called, addMods().
 //for loop, item array, modify impact.
@@ -137,8 +122,6 @@ var defense = {
     modify2: new Defense("nail",2),
     modify3: new Defense("weld",3)
 }
-
-
 
 /** 
  
@@ -242,9 +225,6 @@ var repair = function(glue, nail, weld){
      this.weld = weld;
 }
 */
-
-
-
 
 // CLASS NOTES
 /** 
