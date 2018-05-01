@@ -28,7 +28,7 @@ function Target(name, health)
  }
 
  //DONE with items. Created 3 modifiers. *NUMERIC VALUE.
-
+//Edit: Step 7 - giveFunction, reflect onclick buttons on HTML.
 
  function giveGlue() 
 {
@@ -94,8 +94,6 @@ function hit() {
     target.nazi.hits++
     update();
 }
-
-//Step 7 - give function to give item to target.
 
 
 //Do i need to add glue, nail, weld or is that covered on line 23? <--- YES
