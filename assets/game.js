@@ -29,24 +29,21 @@ function Target(name, health)
 
  //DONE with items. Created 3 modifiers. *NUMERIC VALUE.
 
- function giveMods() 
+ function glue() 
 {
     target.nazi.item.push(items.glue.modifier);
-    addMods();
     update();
 }
 
-function giveMods() 
+function nail() 
 {
     target.nazi.item.push(items.nail.modifier);
-    addMods();
     update();
 }
 
-function giveMods() 
+function weld() 
 {
     target.nazi.item.push(items.weld.modifier);
-    addMods();
     update();
 }
 
