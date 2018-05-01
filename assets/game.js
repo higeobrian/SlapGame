@@ -29,19 +29,20 @@ function Target(name, health)
 
  //DONE with items. Created 3 modifiers. *NUMERIC VALUE.
 
- function glue() 
+
+ function giveGlue() 
 {
     target.nazi.item.push(items.glue.modifier);
     update();
 }
 
-function nail() 
+function giveNail() 
 {
     target.nazi.item.push(items.nail.modifier);
     update();
 }
 
-function weld() 
+function giveWeld() 
 {
     target.nazi.item.push(items.weld.modifier);
     update();
@@ -94,9 +95,10 @@ function hit() {
     update();
 }
 
+//Step 7 - give function to give item to target.
 
 
-//Do i need to add glue, nail, weld or is that covered on line 23?
+//Do i need to add glue, nail, weld or is that covered on line 23? <--- YES
 
 function update() {
     document.getElementById('health').innerText=`${target.nazi.health}`
