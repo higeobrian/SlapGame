@@ -92,7 +92,11 @@ function slap3() {
     update()
 }
 
-//I think i need to track # of hits somewhere? a hit function. 
+function hit() {
+    target.nazi.hits++
+    update()
+}
+
 //Do i need to add glue, nail, weld or is that covered on line 23?
 
 function update() {
