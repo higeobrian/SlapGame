@@ -50,8 +50,6 @@ function giveWeld()
 
 //DONE with Step 4: Giving nazi items using .push. Could this be done with 1 function?
 
-// WHERE ELSE DO I USE THE FUNCTION ITEM()????
-
 // FOR LOOP FUNCTION 
 
 // Step 5: addmods, start "for loop". calculate combined value of modifiers in the target.items array. Create variable total above/outside the loop. is 0 greater than item array. YES, because all items begin with a negative number. Var is -1, -2, or -3.       
@@ -63,7 +61,7 @@ function addMods()
     for(var i = 0; i < target.nazi.item.length; i++) 
     {  
         var item = target.nazi.item[i]; 
-        total += item.modifier; 
+        total += item; //removed .modifier
     } 
 
     if(total)
@@ -76,8 +74,9 @@ function addMods()
     }
 }  
 
-
+// SHOULD THIS BE: total -= item.modifier?????
 // EDIT: step 6: if there are no mods, the total should be 1. Need to return 1.
+// SHOULD AddMods() function be moved up to the functions between line 33 and 49? 
 
 
 function slap1() {
@@ -114,6 +113,8 @@ function update() {
 update()
 
 
+// MODIFIERS ARE NOT WORKING? 
+// Items = Reduce Damage? 
 
 
 
