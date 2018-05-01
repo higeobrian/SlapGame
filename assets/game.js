@@ -19,7 +19,7 @@ function Target(name, health)
      this.modifier = modifier;
      this.description = description;
  }
- 
+ //bulk objects, each object with own name and parameters. Constructor defines paramters.
  var items = 
  {
      glue: new Item("glue", -1, "add 1 health"),
@@ -28,7 +28,7 @@ function Target(name, health)
  }
 
  //DONE with items. Created 3 modifiers. *NUMERIC VALUE.
-//Edit: Step 7 - giveFunction, reflect onclick buttons on HTML.
+//Edit: Step 7 - giveFunction, reflect onclick buttons on HTML. Push items to nazi.
 
  function giveGlue() 
 {
@@ -50,11 +50,12 @@ function giveWeld()
 
 //DONE with Step 4: Giving nazi items using .push. Could this be done with 1 function?
 
-
+// WHERE ELSE DO I USE THE FUNCTION ITEM()????
 
 // FOR LOOP FUNCTION 
 
-// Step 5: addmods, start "for loop". calculate combined value of modifiers in the target.items array. Create variable total above/outside the loop. define i variable as 0. if 0 is greater than running total, multiply (i++).       Have function 'return' total;...
+// Step 5: addmods, start "for loop". calculate combined value of modifiers in the target.items array. Create variable total above/outside the loop. is 0 greater than item array. YES, because all items begin with a negative number. Var is -1, -2, or -3.       
+//Have function 'return' total;...
 
 function addMods()
 {
@@ -63,13 +64,20 @@ function addMods()
     {  
         var item = target.nazi.item[i]; 
         total += item.modifier; 
-    }; 
-    if(total){
-    return total;
-}
-};
+    } 
 
-// 4LOOP FUNCTION 
+    if(total)
+    {
+    return total;
+    }
+    else;
+    {
+    return 1;
+    }
+}  
+
+
+// EDIT: step 6: if there are no mods, the total should be 1. Need to return 1.
 
 
 function slap1() {
@@ -95,8 +103,7 @@ function hit() {
     update();
 }
 
-
-//Do i need to add glue, nail, weld or is that covered on line 23? <--- YES
+// THE FRONT END IS CAUSING HEALTH SPAN TO PRODUCE "NAN" AKA NOT A NUMBER. HEALTH: NAN, WHEN I CLICK THE SLAP BUTTONS. SOMETHING IS WRONG WITH *addMods() function.
 
 function update() {
     document.getElementById('health').innerText=`${target.nazi.health}`
