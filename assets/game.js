@@ -77,24 +77,27 @@ function addMods()
 function slap1() {
     target.nazi.health -= 1 * addMods();
     target.nazi.hits += 1;
-    update()
+    hit();
+    update();
 }
 
 function slap2() {
     target.nazi.health -= 5 * addMods();
     target.nazi.hits += 1;
-    update()
+    hit();
+    update();
 }
 
 function slap3() {
     target.nazi.health -= 10 * addMods();
     target.nazi.hits += 1;
-    update()
+    hit();
+    update();
 }
 
 function hit() {
     target.nazi.hits++
-    update()
+    update();
 }
 
 //Do i need to add glue, nail, weld or is that covered on line 23?
