@@ -1,102 +1,99 @@
-//Function: adding characters
-
-//vars 
-
-//creating new character with set parameters from below syntax.
-var target = {
+var target = 
+{
     nazi: new Target('Nazi', 100)
 }
-//constructor function. Creates new objects.
+
 function Target(name, health) 
 {
     this.name = name;
     this.health = health;
-    this.items = [];
+    this.item = [];
     this.hits = 0;
  }
+ 
+ //DONE with character.  
 
-//creating new items with set parameters, after creating a construction function of item objects.
-//used example from instruction, readme2, structure.
+ function Item(name, modifier, description) 
+ {
+     this.name = name;
+     this.modifier = modifier;
+     this.description = description;
+ }
+ 
+ var items = 
+ {
+     glue: new Item("glue", -1, "add 1 health"),
+     nail: new Item("nail", -2, "add 2 health"),
+     weld: new Item("weld", -3, "add 3 health"),
+ }
 
-function Item(name, modifier, description) {
-    this.name = name;
-    this.modifier = modifier;
-    this.description = description;
-}
+ //DONE with items. Created 3 modifiers. *NUMERIC VALUE.
 
-var items = [{
-    glue: new Item("glue", -1, "add 1 health"),
-    nail: new Item("nail", -2, "add 2 health"),
-    weld: new Item("weld", -3, "add 3 health"),
-}]
-
-//MODIFIERS - damage reduction. pushes items () created above to nazi target. the parameter houses the item.
-
-function giveGlue() {
-    target.nazi.items.push(items.glue);
+ function giveMods() 
+{
+    target.nazi.item.push(items.glue.modifier);
+    addMods();
     update();
 }
 
-function giveNail() {
-    target.nazi.items.push(items.nail);
+function giveMods() 
+{
+    target.nazi.item.push(items.nail.modifier);
+    addMods();
     update();
 }
 
-function giveWeld() {
-    target.nazi.items.push(items.weld);
+function giveMods() 
+{
+    target.nazi.item.push(items.weld.modifier);
+    addMods();
     update();
 }
 
+//DONE with Step 4: Giving nazi items using .push. Could this be done with 1 function?
 
-//DAMAGE IMPACT - Nazi health is effected from "attack" buttons, reduced from 100.
-// * addMods(); refers to forloop function - instructed w/in readme doc. 
-//update function runs when button is selected, to update front end.
 
-/** 
-var ammo = {
-    bullets: new Weapon("Bullets",-1),
-    missles: new Weapon("missles",-5),
-    lasers: new Weapon("lasers",-10)
+
+// FOR LOOP FUNCTION 
+
+// Step 5: addmods, start "for loop". calculate combined value of modifiers in the target.items array. Create variable total above/outside the loop. define i variable as 0. if 0 is greater than running total, multiply (i++).       Have function 'return' total;...
+
+function addMods()
+{
+    var total = 0; 
+    for(var i = 0; i < target.nazi.item.length; i++) 
+    {  
+        var item = target.nazi.item[i]; 
+        total += item.modifier; 
+    }; 
+    if(total){
+    return total;
 }
-*/
+};
 
-//is this supposed to be an array?? <======== 
-function bullets() {
+// 4LOOP FUNCTION 
+
+
+function slap1() {
     target.nazi.health -= 1 * addMods();
     target.nazi.hits += 1;
     update()
 }
 
-function missles() {
-    target.nazi.health -= 3 * addMods();
-    target.nazi.hits += 1;
-    update()
-}
-
-function lasers() {
+function slap2() {
     target.nazi.health -= 5 * addMods();
     target.nazi.hits += 1;
     update()
 }
 
-//Create a function that will be called, addMods(), including forloop with 
-//for loop, item array, modify impact.
-//Using a "for loop", calculate the combined value of modifiers in the target.items array.
-//create a total variable 
-//if 0 is great than what the nazi uses, add 1.
-//var item = target.nazi.items[i]; array. 
-//total = 0, add to ---- confused with last part. item references the above, but .modifier references the item? So target.nazi.items[i]... choose glue, which is +1..total (0) +1 to modifier glue. returns +1 to health? 
-
-function addMods(){
-var total = 0; 
-for (var i = 0; i < target.nazi.items.length; i++) {  
-    var item = target.nazi.items[i]; 
-    total += item.modifier; 
-} 
-return total;
+function slap3() {
+    target.nazi.health -= 10 * addMods();
+    target.nazi.hits += 1;
+    update()
 }
 
-//END AND CALL/REFLECT RESULTS
+//I think i need to track # of hits somewhere? a hit function. 
+//Do i need to add glue, nail, weld or is that covered on line 23?
 
 function update() {
     document.getElementById('health').innerText=`${target.nazi.health}`
@@ -106,31 +103,34 @@ function update() {
 
 update()
 
-/** 
- * FIX ERRORS: ... do i need to add globals.XXXX()????
- * 
- * game.js:17 Uncaught SyntaxError: Unexpected token }
-(index):39 Uncaught TypeError: bullets is not a function
-    at HTMLButtonElement.onclick ((index):39)
-onclick @ (index):39
-(index):40 Uncaught TypeError: missles is not a function
-    at HTMLButtonElement.onclick ((index):40)
-onclick @ (index):40
-(index):41 Uncaught TypeError: lasers is not a function
-    at HTMLButtonElement.onclick ((index):41)
-onclick @ (index):41
-(index):48 Uncaught ReferenceError: glue is not defined
-    at HTMLButtonElement.onclick ((index):48)
-onclick @ (index):48
-(index):49 Uncaught TypeError: nail is not a function
-    at HTMLButtonElement.onclick ((index):49)
-onclick @ (index):49
-(index):50 Uncaught TypeError: weld is not a function
-    at HTMLButtonElement.onclick ((index):50)
- */
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Create a function that will be called, addMods(), including forloop with 
+//for loop, item array, modify impact.
+//Using a "for loop", calculate the combined value of modifiers in the target.items array.
+//create a total variable 
+//if 0 is great than what the nazi uses, add 1.
+//var item = target.nazi.items[i]; array. 
+//total = 0, add to ---- confused with last part. item references the above, but .modifier references the item? So target.nazi.items[i]... choose glue, which is +1..total (0) +1 to modifier glue. returns +1 to health? 
 
 
 //function damage 
