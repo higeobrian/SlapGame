@@ -22,9 +22,9 @@ function Target(name, health)
  //bulk objects, each object with own name and parameters. Constructor defines paramters.
  var items = 
  {
-     glue: new Item("glue", -1, "add 1 health"),
-     nail: new Item("nail", -2, "add 2 health"),
-     weld: new Item("weld", -3, "add 3 health"),
+     glue: new Item("glue", 1, "add 1 health"),
+     nail: new Item("nail", 2, "add 2 health"),
+     weld: new Item("weld", 3, "add 3 health"),
  }
 
  //DONE with items. Created 3 modifiers. *NUMERIC VALUE.
