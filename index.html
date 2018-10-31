@@ -26,24 +26,27 @@
         </header>
 
         <div class="row" id="plane">
-            <div class="col-12 d-flex justify-content-center">
+            <div class="col-12">
             </div>
         </div>
 
         <footer>
             <div class="row mb-3">
 
-                <div class="col-6">
+                <div class="col-4">
                     <center>
                         <h1>Attack</h1>
                         <button onclick="slap1()" type="button" id="bullets" class="btn btn-primary">Bullets</button>
                         <button onclick="slap2()" type="button" id="missles" class="btn btn-primary">Missles</button>
                         <button onclick="slap3()" type="button" id="lasers" class="btn btn-primary">Lasers</button>
                 </div>
-                    </center> 
-
-                <div class="col-6">
-                    <center>
+                    <div class="col-4">
+                       
+                            <button class="btn btn-danger" onclick="resetGame()">Reset Game</button>
+                        
+                    </div>
+                <div class="col-4">
+                    
                         <h1>Repairs</h1>
                         <button onclick="giveGlue()" type="button" id-"items" class="btn btn-secondary">Glue</button>
                         <button onclick="giveNail()" type="button" id="items" class="btn btn-secondary">Nail</button>
@@ -51,11 +54,7 @@
                 </div>
             </div>
                     </center>
-                    <div class="col-12">
-                        <center>
-                            <button class="btn btn-danger" onclick="resetGame()">Reset Game</button>
-                        </center>
-                    </div>
+            
         </footer>
 
     </div>

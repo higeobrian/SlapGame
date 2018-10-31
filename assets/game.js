@@ -98,7 +98,6 @@ function addMods()
         var item = target.nazi.item[i]; 
         total += item; //removed .modifier
     } 
-
     if(total)
     {
     return total;
@@ -108,7 +107,6 @@ function addMods()
     return 1;
     }
 }  
-
 
 // function addMods()
 // {
