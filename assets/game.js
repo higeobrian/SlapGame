@@ -133,7 +133,9 @@ function resetGame() {
     target.nazi.health = 100;
     target.nazi.hits = 0;
     target.nazi.item = [];
-}
+};
+
+update()
     
 
 
