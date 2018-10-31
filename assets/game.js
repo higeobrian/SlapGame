@@ -127,14 +127,6 @@ function addMods()
 //     }
 // }  
 
-function resetGame() {
-    target.nazi.health = 100;
-    target.nazi.hits = 0;
-    target.nazi.item = [];
-};
-
-update()
-    
 
 
 // THE FRONT END IS CAUSING HEALTH SPAN TO PRODUCE "NAN" AKA NOT A NUMBER. HEALTH: NAN, WHEN I CLICK THE SLAP BUTTONS. SOMETHING IS WRONG WITH *addMods() function.
