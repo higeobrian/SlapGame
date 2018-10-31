@@ -30,21 +30,23 @@ function Target(name, health)
  //DONE with items. Created 3 modifiers. *NUMERIC VALUE.
 //Edit: Step 7 - giveFunction, reflect onclick buttons on HTML. Push items to nazi.
 
- function giveGlue() 
-{
-    target.nazi.item.push(items.glue.modifier);
+// s
+
+function giveGlue(){
+    target.nazi.health += 1 * addMods();
+    health();
     update();
 }
 
-function giveNail() 
-{
-    target.nazi.item.push(items.nail.modifier);
+function giveNail(){
+    target.nazi.health += 2 * addMods();
+    health();
     update();
 }
 
-function giveWeld() 
-{
-    target.nazi.item.push(items.weld.modifier);
+function giveWeld(){
+    target.nazi.health += 3 * addMods();
+    health();
     update();
 }
 
@@ -54,25 +56,6 @@ function giveWeld()
 
 // Step 5: addmods, start "for loop". calculate combined value of modifiers in the target.items array. Create variable total above/outside the loop. is 0 greater than item array. YES, because all items begin with a negative number. Var is -1, -2, or -3.       
 //Have function 'return' total;...
-
-function addMods()
-{
-    var total = 0; 
-    for(var i = 0; i < target.nazi.item.length; i++) 
-    {  
-        var item = target.nazi.item[i]; 
-        total += item; //removed .modifier
-    } 
-
-    if(total)
-    {
-    return total;
-    }
-    else;
-    {
-    return 1;
-    }
-}  
 
 // SHOULD THIS BE: total -= item.modifier?????
 // EDIT: step 6: if there are no mods, the total should be 1. Need to return 1.
@@ -102,6 +85,58 @@ function hit() {
     update();
 }
 
+function health() {
+    target.nazi.health++
+    update();
+}
+
+function addMods()
+{
+    var total = 0; 
+    for(var i = 0; i < target.nazi.item.length; i++) 
+    {  
+        var item = target.nazi.item[i]; 
+        total += item; //removed .modifier
+    } 
+
+    if(total)
+    {
+    return total;
+    }
+    else;
+    {
+    return 1;
+    }
+}  
+
+
+// function addMods()
+// {
+//     var total = 0; 
+//     for(var i = 0; i < target.nazi.item.length; i++) 
+//     {  
+//         var item = target.nazi.item[i]; 
+//         total += item; //removed .modifier
+//     } 
+
+//     if(total)
+//     {
+//     return total;
+//     }
+//     else;
+//     {
+//     return 1;
+//     }
+// }  
+
+function resetGame() {
+    target.nazi.health = 100;
+    target.nazi.hits = 0;
+    target.nazi.item = [];
+}
+    
+
+
 // THE FRONT END IS CAUSING HEALTH SPAN TO PRODUCE "NAN" AKA NOT A NUMBER. HEALTH: NAN, WHEN I CLICK THE SLAP BUTTONS. SOMETHING IS WRONG WITH *addMods() function.
 
 function update() {
@@ -115,24 +150,6 @@ update()
 
 // MODIFIERS ARE NOT WORKING? 
 // Items = Reduce Damage? 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Create a function that will be called, addMods(), including forloop with 
@@ -192,24 +209,6 @@ Function (attack){
         update();
     }
     
-    function attack(bullets){
-        nazi.health -= 1;
-        nazi.hits += 1;
-        update();
-        }
-    
-    function attack(missles){
-        nazi.health -= 5;
-        nazi.hits += 5;
-        update();
-    }
-    
-    function attack(lasers){
-        nazi.health -= 10;
-        nazi.hits += 10;
-        update();
-    } 
-
 var repair = {
 	glue: new Glue ("glue",+1),
     nail: new Nail ("nail",+3),
